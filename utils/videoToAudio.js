@@ -1,5 +1,4 @@
 import youtubedl from 'youtube-dl-exec';
-// import { google } from "googleapis";
 import fs from "fs";
 import path from "path";
 import uploadAudio from './uploadAudio.js';
@@ -7,13 +6,6 @@ import uploadAudio from './uploadAudio.js';
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 const audioFolderPath = path.resolve(__dirname, '../audio');
-
-// const auth = new google.auth.GoogleAuth({
-//     keyFile: '../credentials.json',
-//     scopes: ['https://www.googleapis.com/auth/drive.file'],
-// });
-
-// const drive = google.drive({ version: 'v3', auth });
 
 async function videoToAudio(songId) {
     const ytUrl = `https://www.youtube.com/watch?v=${songId}`;
