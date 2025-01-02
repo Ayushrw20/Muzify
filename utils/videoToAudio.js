@@ -13,14 +13,13 @@ async function videoToAudio(songId) {
 
     try {
         await youtubedl(ytUrl, {
-          extractAudio: true,
-          audioFormat: 'mp3',
-          output: outputFilePath,
+            extractAudio: true,
+            audioFormat: 'mp3',
+            output: outputFilePath
         });
 
-        console.log("Audio extracted");
-
-        await uploadAudio(outputFilePath);
+        // console.log("Audio extracted");
+        return await uploadAudio(outputFilePath, songId);
     } 
     catch (error) {
         console.error('Error extracting audio:', error.message);
